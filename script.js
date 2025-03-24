@@ -32,7 +32,21 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    numCols++;
+    
+    for (let i = 0; i < numRows; i++) {
+        let row = table.rows[i];
+        let cell = row.insertCell();
+        cell.style.backgroundColor = "white";
+        cell.onclick = function(){
+            colorCell(this);
+        };
+    }
+    
+    // if no there are no rows, create a new row
+    if (numRows === 0){
+        addR();
+    }
 }
 
 // Remove a row
