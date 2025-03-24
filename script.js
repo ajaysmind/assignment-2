@@ -3,9 +3,31 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 
+// reference to the grid table
+table = document.getElementById("grid");
+
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let row = table.insertRow();
+    numRows++;
+    
+    for (let i = 0; i < numCols; i++) {
+        let cell = row.insertCell();
+        cell.style.backgroundColor = "white";
+        cell.onclick = function(){
+            colorCell(this);
+        };
+    }
+    
+    // if adding the first row, initialize the  columns
+    if (numCols === 0) {
+        let cell = row.insertCell();
+        cell.style.backgroundColor = "white";
+        cell.onclick = function(){
+            colorCell(this);
+        };
+        numCols = 1;
+    }
 }
 
 // Add a column
