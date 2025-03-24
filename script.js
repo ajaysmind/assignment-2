@@ -19,7 +19,7 @@ function addR() {
         };
     }
     
-    // if adding the first row, initialize the  columns
+    // if adding the first row, initialize the columns
     if (numCols === 0) {
         let cell = row.insertCell();
         cell.style.backgroundColor = "white";
