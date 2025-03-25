@@ -67,6 +67,11 @@ function removeC() {
     }
 }
 
+function colorCell(cell){
+    if (colorSelected !== "SELECT") {
+        cell.style.backgroundColor = colorSelected;
+    }
+}
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
