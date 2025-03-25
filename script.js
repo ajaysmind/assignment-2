@@ -51,7 +51,10 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if (numRows > 0) {
+        table.deleteRow(-1);
+        numRows--;
+    }
 }
 
 // Remove a column
